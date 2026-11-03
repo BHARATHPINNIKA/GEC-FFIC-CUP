@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GEC FFIC CUP — SRGEC | Free Fire Tournament 2026</title>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background: #060b18;
+        color: #d8e6f5;
+        line-height: 1.65;
+    }
+    a { color: #00d4ff; }
+
+    /* HERO */
+    header {
+        background: linear-gradient(135deg, #0a1a3a 0%, #004e7c 50%, #00b4d8 100%);
+        padding: 50px 20px 40px;
+        text-align: center;
+        border-bottom: 3px solid #00d4ff;
+        position: relative;
+        overflow: hidden;
+    }
+    header::before {
+        content: '';
+        position: absolute;
+        top: -50%; left: -50%;
+        width: 200%; height: 200%;
+        background: radial-gradient(circle, rgba(0,212,255,0.15) 0%, transparent 60%);
+        animation: pulse 6s infinite alternate;
+    }
+    @keyframes pulse { from { transform: scale(1); } to { transform: scale(1.15); } }
+    header h1 {
+        font-size: 2.6em;
+        color: #ffffff;
+        text-shadow: 0 0 20px #00d4ff, 0 0 40px rgba(0,212,255,0.5);
+        letter-spacing: 1px;
+        position: relative;
+    }
+    header h2 {
+        font-size: 1.2em;
+        color: #9fe8ff;
+        margin-top: 8px;
+        font-weight: 400;
+        position: relative;
+    }
+    .badge {
+        display: inline-block;
+        background: rgba(0,212,255,0.15);
+        border: 1px solid #00d4ff;
+        color: #00d4ff;
+        padding: 6px 16px;
+        border-radius: 20px;
+        font-size: 0.85em;
+        margin-top: 18px;
+        position: relative;
+    }
+
+    /* LAYOUT */
+    .container { max-width: 860px; margin: 0 auto; padding: 30px 20px; }
+    section { margin-bottom: 45px; }
+    h2.section-title {
+        color: #00d4ff;
+        font-size: 1.5em;
+        border-left: 5px solid #00d4ff;
+        padding-left: 14px;
+        margin-bottom: 20px;
+        text-shadow: 0 0 10px rgba(0,212,255,0.4);
+    }
+    .card {
+        background: #0d1830;
+        border: 1px solid #1a3355;
+        border-radius: 10px;
+        padding: 22px;
+        margin-bottom: 16px;
+        box-shadow: 0 4px 18px rgba(0,0,0,0.4);
+    }
+    .card strong { color: #00d4ff; }
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 600px) { .grid2 { grid-template-columns: 1fr; } }
+
+    /* TABLES */
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.95em; }
+    th, td { border: 1px solid #1a3355; padding: 10px; text-align: center; }
+    th { background: linear-gradient(135deg, #004e7c, #00b4d8); color: #fff; }
+    tr:nth-child(even) { background: #0a1428; }
+
+    /* PRIZES */
+    .prize-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    @media (max-width: 650px) { .prize-grid { grid-template-columns: 1fr 1fr; } }
+    .prize {
+        background: linear-gradient(160deg, #0d1830, #102a4a);
+        border: 1px solid #00d4ff;
+        border-radius: 10px;
+        padding: 18px 10px;
+        text-align: center;
+        box-shadow: 0 0 18px rgba(0,212,255,0.2);
+    }
+    .prize .place { font-size: 0.8em; color: #9fe8ff; text-transform: uppercase; letter-spacing: 1px; }
+    .prize .amount { font-size: 1.6em; color: #00d4ff; font-weight: bold; margin-top: 6px; }
+
+    /* CTA BUTTON */
+    .btn {
+        display: inline-block;
+        background: linear-gradient(135deg, #0096c7, #00d4ff);
+        color: #04121f;
+        padding: 14px 32px;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 1.05em;
+        box-shadow: 0 0 22px rgba(0,212,255,0.5);
+        transition: 0.2s;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 0 32px rgba(0,212,255,0.8); }
+
+    /* FORM */
+    iframe { width: 100%; min-height: 1050px; border: none; background: #fff; border-radius: 10px; }
+
+    /* QR */
+    .qr-box {
+        text-align: center;
+        background: #0d1830;
+        border: 1px solid #1a3355;
+        border-radius: 10px;
+        padding: 22px;
+    }
+    .qr-box img {
+        max-width: 240px;
+        width: 100%;
+        border-radius: 10px;
+        border: 2px solid #00d4ff;
+        box-shadow: 0 0 20px rgba(0,212,255,0.4);
+        background: #fff;
+        padding: 6px;
+    }
+    .upi-id {
+        font-size: 1.2em;
+        color: #00d4ff;
+        font-weight: bold;
+        margin: 10px 0;
+        letter-spacing: 1px;
+    }
+
+    /* NOTE */
+    .note {
+        background: #1a0d1a;
+        border-left: 4px solid #ff4d6d;
+        padding: 14px;
+        border-radius: 6px;
+        font-size: 0.92em;
+        color: #ffb3c1;
+        margin-top: 12px;
+    }
+
+    footer {
+        text-align: center;
+        padding: 24px;
+        color: #4a6a8a;
+        font-size: 0.85em;
+        border-top: 1px solid #1a3355;
+    }
+    footer a { color: #00d4ff; }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>🔥 GEC FFIC CUP 🔥</h1>
+    <h2>SRGEC &mdash; Free Fire Battle Royale Tournament 2026</h2>
+    <div class="badge">🎮 24 Teams &nbsp;|&nbsp; 4v4 Squad BR &nbsp;|&nbsp; Bermuda Only</div>
+</header>
+
+<div class="container">
+
+    <!-- ABOUT -->
+    <section>
+        <h2 class="section-title">📌 Tournament Overview</h2>
+        <div class="card">
+            <div class="grid2">
+                <p><strong>Game Mode:</strong> Battle Royale (Squad)</p>
+                <p><strong>Map:</strong> Bermuda Only</p>
+                <p><strong>Total Teams:</strong> 24 (Group A: 12 + Group B: 12)</p>
+                <p><strong>Teams per Lobby:</strong> 12</p>
+                <p><strong>Entry Fee:</strong> ₹200 per team</p>
+                <p><strong>Character Skills:</strong> Allowed</p>
+                <p><strong>Gun Attributes:</strong> Banned</p>
+                <p><strong>Substitute:</strong> 1 allowed per team</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCHEDULE -->
+    <section>
+        <h2 class="section-title">🗓️ Match Schedule</h2>
+        <table>
+            <tr><th>Date</th><th>Day</th><th>Time</th><th>Event</th></tr>
+            <tr><td>Nov 4 – 6, 2026</td><td>Wed – Fri</td><td>All day</td><td>Registration + Fee Payment</td></tr>
+            <tr><td>Nov 7, 2026</td><td>Saturday</td><td>Evening</td><td>Group A &mdash; 2 Matches</td></tr>
+            <tr><td>Nov 8, 2026</td><td>Sunday</td><td>Morning</td><td>Group B &mdash; 2 Matches</td></tr>
+            <tr><td>Nov 8, 2026</td><td>Sunday</td><td>Evening</td><td>🏆 Grand Final (Top 6 A + Top 6 B)</td></tr>
+        </table>
+        <div class="note">
+            ⚠️ Exact match timings and Custom Room ID/password will be shared in the official <strong>WhatsApp group</strong>. Join the group after registering.
+        </div>
+    </section>
+
+    <!-- SCORING -->
+    <section>
+        <h2 class="section-title">📊 Scoring System (Per Match)</h2>
+        <div class="card">
+            <table>
+                <tr><th>Placement</th><th>Points</th><th>Placement</th><th>Points</th></tr>
+                <tr><td>1st (Booyah) 🏆</td><td>30</td><td>4th – 12th</td><td>0</td></tr>
+                <tr><td>2nd</td><td>20</td><td>Per Kill</td><td>3</td></tr>
+                <tr><td>3rd</td><td>10</td><td></td><td></td></tr>
+            </table>
+            <p style="margin-top:14px">
+                <strong>Group Standings</strong> = Match 1 Points + Match 2 Points (placement + kills).<br>
+                <strong>Top 6 from Group A</strong> and <strong>Top 6 from Group B</strong> advance to the Grand Final.
+            </p>
+        </div>
+    </section>
+
+    <!-- PRIZES -->
+    <section>
+        <h2 class="section-title">💰 Prize Pool (₹4800 Total)</h2>
+        <div class="prize-grid">
+            <div class="prize"><div class="place">🥇 1st Place</div><div class="amount">₹1500</div></div>
+            <div class="prize"><div class="place">🥈 2nd Place</div><div class="amount">₹1000</div></div>
+            <div class="prize"><div class="place">🥉 3rd Place</div><div class="amount">₹800</div></div>
+            <div class="prize"><div class="place">💀 Most Kills</div><div class="amount">₹500</div></div>
+        </div>
+    </section>
+
+    <!-- REGISTRATION -->
+    <section>
+        <h2 class="section-title">📝 Register Your Squad</h2>
+        <div class="card">
+            <p><strong>Entry Fee:</strong> ₹200 per team &nbsp;|&nbsp; <strong>Registration closes:</strong> Nov 6, 2026, 11:59 PM</p>
+            <p style="margin-top:10px">
+                Each team must have <strong>at least 1 SRGEC student</strong> among the 4 playing members (verified via college ID upload). The substitute may be from any college.
+            </p>
+        </div>
+        <br>
+        <!-- 🔻🔻 REPLACE THE LINE BELOW WITH YOUR GOOGLE FORM IFRAME EMBED CODE 🔻🔻 -->
+        <iframe src="REPLACE_WITH_GOOGLE_FORM_EMBED_LINK"
+                title="GEC FFIC CUP Registration Form">
+            Loading form...
+        </iframe>
+        <!-- 🔺🔺 REPLACE THE LINE ABOVE WITH YOUR GOOGLE FORM IFRAME EMBED CODE 🔺🔺 -->
+        <p style="margin-top:12px; font-size:0.9em; color:#6a90b0;">
+            Form not loading?
+            <a href="REPLACE_WITH_GOOGLE_FORM_PLAIN_LINK" target="_blank">Open in a new tab</a>
+        </p>
+    </section>
+
+    <!-- PAYMENT -->
+    <section>
+        <h2 class="section-title">💳 Entry Fee Payment</h2>
+        <div class="qr-box">
+            <p style="margin-bottom:14px; color:#9fe8ff;">Scan the QR below to pay ₹200 and enter the UTR/Reference No. in the registration form.</p>
+            <!-- 🔻🔻 MAKE SURE YOUR QR IMAGE IS NAMED EXACTLY upi-qr.png AND UPLOADED TO THE REPO ROOT 🔻🔻 -->
+            <img src="upi-qr.png" alt="UPI QR Code for ₹200 Entry Fee">
+            <div class="upi-id">UPI ID: REPLACE_WITH_YOUR_UPI_ID</div>
+            <p style="font-size:0.9em; color:#6a90b0;">
+                After payment, paste the <strong>12-digit UTR / Transaction ID</strong> in the registration form.<br>
+                Entry is confirmed only after organizers verify payment.
+            </p>
+        </div>
+    </section>
+
+    <!-- RULES LINK -->
+    <section>
+        <h2 class="section-title">📜 Full Rules</h2>
+        <div class="card" style="text-align:center;">
+            <p>Read all tournament rules &mdash; eligibility, disqualification, match conduct, and more.</p>
+            <br>
+            <a href="rules.html" class="btn">View Full Rules</a>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section>
+        <h2 class="section-title">📞 Contact</h2>
+        <div class="card">
+            <p><strong>Organizer:</strong> Bharath</p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/919392705102" target="_blank">+91 93927 05102</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/BHARATHPINNIKA" target="_blank">BHARATHPINNIKA</a></p>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    &copy; 2026 GEC FFIC CUP &mdash; Organized by Bharath, SRGEC. All rights reserved.
+</footer>
+
+</body>
+</html>
